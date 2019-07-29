@@ -153,7 +153,7 @@ class mssqld(connection):
             r.InstanceToken.TokenType = 0x02
             r.InstanceToken.Offset = 33
             r.InstanceToken.Len = 1
-            r.ThreadIDToken.TokenType = 0x03
+            r.ThreadIDToken.TokenType = 0x02
             r.ThreadIDToken.Offset = 34
             r.ThreadIDToken.Len = 0
             r.MARSToken.TokenType = 0x04
