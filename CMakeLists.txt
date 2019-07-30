@@ -54,7 +54,7 @@ option(WITH_MODULE_CURL "Build the curl module" ON)
 option(WITH_MODULE_EMU "Build the emu module" ON)
 #option(WITH_MODULE_NC "Build the nc module" OFF)
 option(WITH_MODULE_NFQ "Build the nfq module" ON)
-option(WITH_MODULE_NL "Build the nl module" ON)
+option(WITH_MODULE_NL "Build the nl module" OFF)
 option(WITH_MODULE_PCAP "Build the pcap module" ON)
 #option(WITH_MODULE_XMATCH "Build the xmatch module" OFF)
 
