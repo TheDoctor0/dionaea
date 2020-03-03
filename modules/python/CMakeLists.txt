@@ -84,16 +84,10 @@ install_available_python_config(
         ftp.yaml.in
         http.yaml.in
         memcache.yaml
-        mirror.yaml
-        mongo.yaml
-        mqtt.yaml
-        mssql.yaml
         mysql.yaml
         pptp.yaml
-        sip.yaml.in
         smb.yaml
         tftp.yaml.in
-        upnp.yaml.in
 )
 
 install_enabled_python_config(
@@ -105,16 +99,10 @@ install_enabled_python_config(
         ftp.yaml
         http.yaml
         memcache.yaml
-        mirror.yaml
-        mongo.yaml
-        mqtt.yaml
-        mssql.yaml
         mysql.yaml
         pptp.yaml
-        sip.yaml
         smb.yaml
         tftp.yaml
-        upnp.yaml
 )
 
 ########### install ihandler config ###############
@@ -123,36 +111,14 @@ install_available_python_config(
     BUILD_DIR ihandlers-available
     DESTINATION_DIR ihandlers-available
     FILES
-        cmdshell.yaml
-        emuprofile.yaml
-        emu_scripts.yaml
-        fail2ban.yaml.in
-        ftp.yaml
-        hpfeeds.yaml
-        log_db_sql.yaml.in
-        log_incident.yaml.in
-        log_json.yaml.in
-        log_sqlite.yaml.in
-        nfq.yaml
-        p0f.yaml
-        s3.yaml
-        store.yaml
-        submit_http_post.yaml
-        submit_http.yaml
-        tftp_download.yaml
-        virustotal.yaml.in
+        gemaltic_logger.yaml
 )
 
 install_enabled_python_config(
     DESTINATION ihandlers-enabled
     SOURCE_REL_DIR ../ihandlers-available
     FILES
-        cmdshell.yaml
-        emuprofile.yaml
-        ftp.yaml
-        log_sqlite.yaml
-        store.yaml
-        tftp_download.yaml
+        gemaltic_logger.yaml
 )
 
 ##### IHandler
