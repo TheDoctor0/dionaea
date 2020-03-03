@@ -22,7 +22,7 @@ name=filter
 imports=dionaea.log,dionaea.services,dionaea.ihandlers
 sys_paths=default
 service_configs=@DIONAEA_CONFDIR@/services-enabled/*.yaml
-ihandler_configs=@DIONAEA_CONFDIR@/ihandlers-enabled/honeypot_logger.yaml
+ihandler_configs=@DIONAEA_CONFDIR@/ihandlers-enabled/*.yaml
 
 [module.pcap]
 any.interface=any
