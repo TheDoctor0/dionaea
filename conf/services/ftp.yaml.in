@@ -2,4 +2,4 @@
   config:
     root: "@DIONAEA_STATEDIR@/ftp/root"
     response_messages:
-      welcome_msg: 220 DiskStation FTP server ready.
+      welcome_msg: 220 FTP Server - FileZilla

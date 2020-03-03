@@ -5,16 +5,16 @@
       - 80
     ssl_ports:
       - 443
-    max_request_size: 32768 # maximum size in kbytes of the request (32MB)
+    max_request_size: 2048 # maximum size in kbytes of the request (2MB)
     global_headers:
-      - ["Server", "nginx"]
+      - ["Server", "Apache/2.2.9 (Windows) PHP/5.2.6-1 mod_ruby/1.2.6 Ruby/1.8.7(2008-08-11) mod_ssl/2.2.9 OpenSSL/0.9.8g"]
     headers:
       - filename_pattern: ".*\\.php"
         headers:
           - ["Content-Type", "text/html; charset=utf-8"]
           - ["Content-Length", "{content_length}"]
           - ["Connection", "{connection}"]
-          - ["X-Powered-By", "PHP/5.5.9-1ubuntu4.5"]
+          - ["X-Powered-By", "PHP/5.2.6-1"]
     # soap_enabled: false
     template:
       # set to true to enable template processing
@@ -30,4 +30,4 @@
           # - filename: error/{code}.html.j2
       # used to specify additional template values
       values:
-        # full_name: nginx/1.1
+        full_name: Apache/2.2.9

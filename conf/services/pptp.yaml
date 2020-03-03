@@ -16,9 +16,9 @@
 #    vendor_name: linux
 
 # Windows
-#    firmware_revision: 0
-#    hostname:
-#    vendor_name: Microsoft
+    firmware_revision: 0
+    hostname: Windows 7
+    vendor_name: Microsoft
 
 # MikroTik router
 #    firmware_revision: 1
