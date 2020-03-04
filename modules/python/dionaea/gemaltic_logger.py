@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-from gemaltic.utils.api import is_api_available
-from gemaltic.utils.api import api_request
+from gemaltic.utils.logger import Logger
+from gemaltic.utils.api import API
 from dionaea import IHandlerLoader
 from dionaea.core import ihandler
 import threading
@@ -28,20 +28,22 @@ class GemalticLoggerHandler(ihandler):
         self.connections = {}
         self.services = {}
         self.packets = {}
+        self.logger = Logger()
+        self.api = API(self.logger)
         self.scheduler = sched.scheduler(time.time, time.sleep)
         self.scheduler.enter(15, 15, self.send_data)
 
         threading.Thread(target=lambda: self.scheduler.run(), daemon=True).start()
 
     def send_data(self):
-        if is_api_available():
+        if self.api.is_available():
             if len(self.packets):
-                api_request('honeypot/packets', {'packets': self.__transform_dict(self.packets)})
+                self.api.request('honeypot/packets', {'packets': self.__transform_dict(self.packets)})
 
                 self.packets.clear()
 
             if len(self.services):
-                api_request('honeypot/services', {'services': self.__transform_dict(self.services)})
+                self.api.request('honeypot/services', {'services': self.__transform_dict(self.services)})
 
                 self.services.clear()
 
